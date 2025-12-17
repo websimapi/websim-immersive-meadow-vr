@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Immersive Meadow VR</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #000; }
+        #joystick-zone {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 150px;
+            height: 150px;
+            z-index: 10;
+            touch-action: none;
+            display: none; /* Shown via JS on mobile */
+        }
+        #ui-layer {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: rgba(255,255,255,0.7);
+            font-family: sans-serif;
+            pointer-events: none;
+            z-index: 5;
+            text-shadow: 1px 1px 2px black;
+        }
+    </style>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://esm.sh/three@0.158.0",
+            "three/addons/": "https://esm.sh/three@0.158.0/examples/jsm/",
+            "simplex-noise": "https://esm.sh/simplex-noise@4.0.1",
+            "nipplejs": "https://esm.sh/nipplejs@0.10.1"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="ui-layer">
+        Click to Enable Audio<br>
+        WASD/Arrows to Move<br>
+        Mouse to Look<br>
+        VR Supported
+    </div>
+    <div id="joystick-zone"></div>
+    <script type="module" src="./src/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
