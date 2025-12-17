@@ -102,7 +102,7 @@ export class GrassSystem {
         this.scene = scene;
         this.terrainHeightFn = terrainHeightFn; // Function to get Y for X,Z
         
-        this.instanceCount = 30000;
+        this.instanceCount = 100000;
         this.geometry = new THREE.PlaneGeometry(0.15, 1.0, 1, 4);
         this.geometry.translate(0, 0.5, 0); // Pivot at bottom
         

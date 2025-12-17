@@ -30,8 +30,12 @@ class App {
 
         // Subsystems
         this.inputs = new Inputs(this.camera, this.renderer.domElement, this.renderer.xr);
+        // Ensure controllers are in the scene for correct world position tracking
+        this.inputs.controllers.forEach(c => this.scene.add(c));
+        
         this.world = new World(this.scene, this.renderer);
-        this.grass = new GrassSystem(this.scene, this.world.terrainHeightMap, this.inputs);
+        // Pass a function wrapper to maintain correct 'this' context for noise generation
+        this.grass = new GrassSystem(this.scene, (x, z) => this.world.getTerrainHeightAt(x, z), this.inputs);
         this.audio = new AudioController(this.camera);
 
         // Resize Handler
